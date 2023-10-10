@@ -1,0 +1,23 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: dokuwiki
+  namespace: dokuwiki
+spec:
+  rules:
+  - host: dokuwiki.rulx.dev
+    http:
+      paths:
+      - backend:
+          service:
+            name: dokuwiki
+            port:
+              name: https
+        path: /
+        pathType: ImplementationSpecific
+  tls:
+  - hosts:
+    - dokuwiki.rulx.dev
+    secretName: dokuwiki-crt
+status:
+  loadBalancer: {}
