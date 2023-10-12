@@ -18,6 +18,6 @@ spec:
   tls:
   - hosts:
     - dokuwiki.rulx.dev
-    secretName: dokuwiki-crt
+    secretName: dokuwiki-cert
 status:
   loadBalancer: {}
